@@ -3,8 +3,7 @@ o = clock;
 
 path1 = 'C:\magnetooptics\powercal\cal\';  %Calibration images
 path2 = 'C:\magnetooptics\powercal\data\'; %Data images
-path3 = 'C:\magnetooptics\powercal\full\';  %Temporary magnetic images
-path4 = 'C:\magnetooptics\powercal\full\'; %Full magnetic images
+path3 = 'C:\magnetooptics\powercal\full\'; %Magnetic images
 
 string1 = 'YBCO14cal_100K'; %Calibration image name
 string2 = 'YBCO14_4K';      %Data image name
@@ -146,10 +145,10 @@ for i = d+1:h+1
         FULL = [FULL; FULLY];
      end
      if(strcmp(output, 'mat'));
-         filename5 = [path4,'FULL_',string2,'_',number2,'.mat'];  
+         filename5 = [path3,'FULL_',string2,'_',number2,'.mat'];  
          save(filename5,'FULL');  
      else
-         filename5 = [path4,'FULL_',string2,'_',number2,'.tif'];
+         filename5 = [path3,'FULL_',string2,'_',number2,'.tif'];
          imwrite(FULL,filename5,'tif');
      end
 end
