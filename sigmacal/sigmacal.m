@@ -3,7 +3,7 @@ o = clock;
 
 path1 = 'C:\magnetooptics\sigmacal\cal\';  %Calibration images
 path2 = 'C:\magnetooptics\sigmacal\data\'; %Data images
-path3 = 'C:\magnetooptics\sigmacal\full\';  %Magnetic images
+path3 = 'C:\magnetooptics\sigmacal\full\'; %Magnetic images
 
 string1 = 'nbntri26cal_20K'; %Calibration image name
 string2 = 'nbntri26_8K';     %Data image name
