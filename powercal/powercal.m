@@ -3,7 +3,7 @@ o = clock;
 
 path1 = 'C:\magnetooptics\powercal\cal\';  %Calibration images
 path2 = 'C:\magnetooptics\powercal\data\'; %Data images
-path3 = 'C:\magnetooptics\powercal\mag\';  %Temporary magnetic images
+path3 = 'C:\magnetooptics\powercal\full\';  %Temporary magnetic images
 path4 = 'C:\magnetooptics\powercal\full\'; %Full magnetic images
 
 string1 = 'YBCO14cal_100K'; %Calibration image name
@@ -113,10 +113,10 @@ for n = 1:f
             end
             end
             if(strcmp(output, 'mat'));
-                filename3 = [path3,string2,number2,'_',numberm,'_',numbern,'.mat']; %Build path
+                filename3 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.mat']; %Build path
                 save(filename3,'MAG'); %Write B-field rectangle to temp folder                        
             else
-                filename3 = [path3,string2,number2,'_',numberm,'_',numbern,'.tif']; %Build path
+                filename3 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.tif']; %Build path
                 MAG = uint16(MAG); %Cast B-field rectangle to 16 bit integer
                 imwrite(MAG,filename3,'tif'); %Write B-field rectangle to temp folder
             end
@@ -134,11 +134,11 @@ for i = d+1:h+1
             numberm = int2str(m);
             numbern = int2str(n);
             if(strcmp(output, 'mat'));
-                filename4 = [path3,string2,number2,'_',numberm,'_',numbern,'.mat'];
+                filename4 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.mat'];
                 I = load(filename4); 
                 I = I.MAG;
             else
-                filename4 = [path3,string2,number2,'_',numberm,'_',numbern,'.tif'];
+                filename4 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.tif'];
                 I = imread(filename4);
             end               
             FULLY = [FULLY I];
@@ -162,9 +162,9 @@ for i = d+1:h+1
             numberm = int2str(m);
             numbern = int2str(n);
             if(strcmp(output, 'mat'));
-                filename3 = [path3,string2,number2,'_',numberm,'_',numbern,'.mat'];        
+                filename3 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.mat'];        
             else
-                filename3 = [path3,string2,number2,'_',numberm,'_',numbern,'.tif'];
+                filename3 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.tif'];
             end
             delete(filename3);
 end
