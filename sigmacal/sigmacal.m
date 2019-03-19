@@ -3,7 +3,7 @@ o = clock;
 
 path1 = 'C:\magnetooptics\sigmacal\cal\';  %Calibration images
 path2 = 'C:\magnetooptics\sigmacal\data\'; %Data images
-path3 = 'C:\magnetooptics\sigmacal\mag\';  %Magnetic images
+path3 = 'C:\magnetooptics\sigmacal\full\';  %Magnetic images
 
 string1 = 'nbntri26cal_20K'; %Calibration image name
 string2 = 'nbntri26_8K';     %Data image name
@@ -36,7 +36,7 @@ number0 = int2str(h);
 filename0 = [path2,string2,'_',number0,'_0.tif'];
 I = imread(filename0);
 I = I(x:(x+e*a),y:(y+f*b))-32768;
-imshow(20*I);
+imshow(60*I - 45000);
 else
 end
 
@@ -124,10 +124,10 @@ for n = 1:f
             end
             end            
             if(strcmp(output, 'mat'));
-                filename3 = [path3,string2,number2,'_',numberm,'_',numbern,'.mat']; %Build path
+                filename3 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.mat']; %Build path
                 save(filename3,'MAG'); %Write B-field rectangle to temp folder                        
             else
-                filename3 = [path3,string2,number2,'_',numberm,'_',numbern,'.tif']; %Build path
+                filename3 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.tif']; %Build path
                 MAG = uint16(MAG); %Cast B-field rectangle to 16 bit integer
                 imwrite(MAG,filename3,'tif'); %Write B-field rectangle to temp folder
             end
@@ -145,11 +145,11 @@ for i = d+1:h+1
             numberm = int2str(m);
             numbern = int2str(n);            
             if(strcmp(output, 'mat'));
-                filename4 = [path3,string2,number2,'_',numberm,'_',numbern,'.mat'];
+                filename4 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.mat'];
                 I = load(filename4); 
                 I = I.MAG;
             else
-                filename4 = [path3,string2,number2,'_',numberm,'_',numbern,'.tif'];
+                filename4 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.tif'];
                 I = imread(filename4);
             end               
             FULLY = [FULLY I];
@@ -173,9 +173,9 @@ for i = d+1:h+1
             numberm = int2str(m);
             numbern = int2str(n);
             if(strcmp(output, 'mat'));
-                filename3 = [path3,string2,number2,'_',numberm,'_',numbern,'.mat'];        
+                filename3 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.mat'];        
             else
-                filename3 = [path3,string2,number2,'_',numberm,'_',numbern,'.tif'];
+                filename3 = [path3,string2,'_',number2,'_',numberm,'_',numbern,'.tif'];
             end
             delete(filename3);
 end
