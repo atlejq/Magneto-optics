@@ -1,10 +1,10 @@
 clear;
 o = clock;
 
-path1 = 'C:\magnetooptics\calibration\sigmacal\cal\';  %Calibration images
-path2 = 'C:\magnetooptics\calibration\sigmacal\data\'; %Data images
-path3 = 'C:\magnetooptics\calibration\sigmacal\mag\';  %Temporary magnetic images
-path4 = 'C:\magnetooptics\calibration\sigmacal\full\'; %Full magnetic images
+path1 = 'C:\magnetooptics\sigmacal\cal\';  %Calibration images
+path2 = 'C:\magnetooptics\sigmacal\data\'; %Data images
+path3 = 'C:\magnetooptics\sigmacal\mag\';  %Temporary magnetic images
+path4 = 'C:\magnetooptics\sigmacal\full\'; %Full magnetic images
 
 string1 = 'nbntri26cal_20K'; %Calibration image name
 string2 = 'nbntri26_8K';     %Data image name
