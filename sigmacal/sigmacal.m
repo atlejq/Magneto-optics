@@ -3,8 +3,7 @@ o = clock;
 
 path1 = 'C:\magnetooptics\sigmacal\cal\';  %Calibration images
 path2 = 'C:\magnetooptics\sigmacal\data\'; %Data images
-path3 = 'C:\magnetooptics\sigmacal\mag\';  %Temporary magnetic images
-path4 = 'C:\magnetooptics\sigmacal\full\'; %Full magnetic images
+path3 = 'C:\magnetooptics\sigmacal\mag\';  %Magnetic images
 
 string1 = 'nbntri26cal_20K'; %Calibration image name
 string2 = 'nbntri26_8K';     %Data image name
@@ -158,10 +157,10 @@ for i = d+1:h+1
         FULL = [FULL; FULLY];
      end
      if(strcmp(output, 'mat'));
-         filename5 = [path4,'FULL_',string2,'_',number2,'.mat'];  
+         filename5 = [path3,'FULL_',string2,'_',number2,'.mat'];  
          save(filename5,'FULL');  
      else
-         filename5 = [path4,'FULL_',string2,'_',number2,'.tif'];
+         filename5 = [path3,'FULL_',string2,'_',number2,'.tif'];
          imwrite(FULL,filename5,'tif');
      end
 end
