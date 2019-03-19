@@ -1,10 +1,10 @@
 clear;
 o = clock;
 
-path1 = 'C:\magnetooptics\calibration\powercal\cal\';  %Calibration images
-path2 = 'C:\magnetooptics\calibration\powercal\data\'; %Data images
-path3 = 'C:\magnetooptics\calibration\powercal\mag\';  %Temporary magnetic images
-path4 = 'C:\magnetooptics\calibration\powercal\full\'; %Full magnetic images
+path1 = 'C:\magnetooptics\powercal\cal\';  %Calibration images
+path2 = 'C:\magnetooptics\powercal\data\'; %Data images
+path3 = 'C:\magnetooptics\powercal\mag\';  %Temporary magnetic images
+path4 = 'C:\magnetooptics\powercal\full\'; %Full magnetic images
 
 string1 = 'YBCO14cal_100K'; %Calibration image name
 string2 = 'YBCO14_4K';      %Data image name
