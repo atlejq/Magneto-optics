@@ -41,7 +41,7 @@ moment = [moment, momentbranch]; %Appends branch to hysteresis loop
 end
 
 figure(1)
-plot(field,moment,'ro')
+plot(field,moment,'r*')
 hold on;
 plot(DCM(:,1), DCM(:,2)/1000000,'k:','LineWidth',2) %DCM data is in micro-Am^2
 xlabel('B_{a} (mT)','FontSize',18,'FontName','Arial')
